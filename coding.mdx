@@ -1,0 +1,40 @@
+---
+title: 'Simple node JS code'
+date: '2023-03-17'
+tags: ['node.js', 'coding']
+---
+
+Hi bro ! Voici un petit jeu en node JS pour deviner un nombre entre 0 et 1000 !
+
+```javascript
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+const secretNumber = Math.floor(Math.random() * 1000);
+
+function askQuestion() {
+  rl.question('Guess a number between 0 and 1000: ', (answer) => {
+    const guess = parseInt(answer);
+
+    if (isNaN(guess)) {
+      console.log('Please enter a valid number.');
+      askQuestion();
+    } else if (guess < secretNumber) {
+      console.log('Too low!');
+      askQuestion();
+    } else if (guess > secretNumber) {
+      console.log('Too high!');
+      askQuestion();
+    } else {
+      console.log('Congratulations! You guessed the number.');
+      rl.close();
+    }
+  });
+}
+
+askQuestion();
+```

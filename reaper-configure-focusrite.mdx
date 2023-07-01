@@ -1,0 +1,21 @@
+---
+title: "Utiliser Reaper avec la carte son Focusrite Scarlett 2i2"
+subtitle: "Comment paramétrer reaper pour utiliser une carte son Focusrite Scarlett 2i2."
+date: "2023-05-07"
+---
+
+Quand il s'agit d'enregistrer, c'est bien d'avoir un minimum de matériel adequat.
+J'avais opté il y a quelques années pour ce modèle de carte son externe : [Focusrite Scarlett 2i2](https://focusrite.com/fr/usb-audio-interface/scarlett/scarlett-2i2), elle est abordable et de très bonne qualité. Quand au logiciel d'enregistrement, il n'est pas évident de choisir non plus car il y en a beaucoup sur le marché... J'aime beaucoup [Reaper](https://www.reaper.fm/)  peut être car je suis maintenant habitué à l'utiliser mais aussi car il y a de nombreux raccourcis qui une fois maîtrisés font gagner en plaisir d'utilisation
+
+## Configurer sa carte son Focusrite Scalett 2i2 dans Reaper
+
+Voici la recette : D
+
+```
+1. brancher sa carte son par le port USB (facile)
+2. installer le [USB driver] https://downloads.focusrite.com/focusrite/scarlett-2nd-gen/scarlett-2i2-2nd-gen
+3. configurer Reaper pour utiliser la carte son : aller dans Options -> Préférences puis menu Audio -> Device, et sélectionner Audio system: ASIO, puis ASIO Driver: Focusrite USB ASIO (cf capture écran ci-dessous)
+```
+<CustomImage src="https://raw.githubusercontent.com/tomtomtomtom44/blogposts/main/images/config-reaper.png" alt="config reaper">
+
+C'est important de sélectionner le système audio en tant que ASIO (initiales pour Audio Stream Input/Output), c'est un protocole de carte son qui permet de réduire fortement la latence du son. 
